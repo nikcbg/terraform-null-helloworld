@@ -1,12 +1,14 @@
 terraform {
-  cloud {
+  backend "remote" {
+    hostname = "app.terraform.io"
     organization = "nikolay-paid"
 
     workspaces {
       name = "terraform-null-helloworld"
     }
   }
-}
+} 
+
 
 
 resource "null_resource" "helloWorld" {
